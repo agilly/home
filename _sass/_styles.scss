@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+
+
+.MathJax span {font-size: inherit }
+
 h1,h2,h3,h4,h5 {
     font-family: $serif;
 }
@@ -57,11 +61,16 @@ sup {
 }
 
 blockquote, blockquote p {
-    font-style: italic;
-    line-height: 1.3em;
-    text-align: center;
-    color: lighten($black, .2);
+    /*font-style: italic;
     margin-bottom: $lh;
+    line-height: 1.3em;*/
+    font-size: $fs4;
+    text-align: left;
+    font-style:italic;
+    padding: 10px;
+    background: #f2f2f2;
+    border-radius:15px;
+    color: lighten($black, .2);
 }
 
 
@@ -72,6 +81,7 @@ code {
     font-family: "Monaco", "Courier New", "Courier";
     font-size: .75em;
     font-weight: bold;
+
 }
 
 .highlight {
@@ -82,6 +92,7 @@ code {
     overflow-x: scroll;
 
     code {
+
         color: $white;
         font-family: "Monaco", "Courier New", "Courier";
         font-size: .9em;
@@ -167,7 +178,8 @@ input {
 
 .post {
     @include column(8);
-    max-width: 680px;
+    /*max-width: 680px;*/
+    max-width: 800px;
     display: block;
     margin: 0 auto;
     float: none;
@@ -720,7 +732,7 @@ h1 {
 }
 
 blockquote, blockquote p {
-    font-size: $fs3;
+    font-size: $fs6;
 }
 
 footer {
@@ -841,6 +853,7 @@ footer {
     margin-top: 15px;
   }
   
+
   header.site-header nav ul li {
     display: block;
     margin-left: 0;

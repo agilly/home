@@ -1,51 +1,27 @@
-var Anchor = {
-	init: function() {
-		Anchor.slidey = $('.slidey');
-		
-		//  Uh, bind to the resizing of the window?
-		$(window).resize(Anchor.bindResize).trigger('resize');
-		
-		//  Set up the toggle link
-		Anchor.linky = $('.linky').click(Anchor.toggleSlidey);
+jQuery(document).ready(function($){
+	var $timeline_block = $('.cd-timeline-block');
 
-		//  Hide the thingymabob
-		setTimeout(function() {
-		    //  Set up the slidey panel
-		    Anchor.hideSlidey();
-		    
-			$('body').addClass('js-enabled');
-		}, 10);
-		
-		//  Listen for search link
-		$('a[href="#search"]').click(function() {
-			if(!Anchor.linky.hasClass('active')) {
-				return Anchor.toggleSlidey.call(Anchor.linky);
+	$('p.expandable').expander({
+		moreClass: 'toright',
+		expandPrefix: '',
+		expandText :'<div style="color:white;">Read more</div>',
+lessClass: 'toless',
+		userCollapseText :'<div style="color:white;">Read less</div>'
+	});
+
+	//hide timeline blocks which are outside the viewport
+	$timeline_block.each(function(){
+		if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+			$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		}
+	});
+
+	//on scolling, show/animate timeline blocks when enter the viewport
+	$(window).on('scroll', function(){
+		$timeline_block.each(function(){
+			if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 			}
 		});
-	},
-	
-	hideSlidey: function() {
-		Anchor.slidey.css('margin-top', this._slideyHeight);
-		Anchor.linky && Anchor.linky.removeClass('active');
-		
-		return this;
-	},
-	
-	toggleSlidey: function() {
-		var self = Anchor;
-		var me = $(this);
-			
-		me.toggleClass('active');
-		self.slidey.css('margin-top', me.hasClass('active') ? 0 : self._slideyHeight);
-		
-		return false;
-	},
-	
-	bindResize: function() {
-		Anchor._slideyHeight = -(Anchor.slidey.height() + 1);
-		Anchor.hideSlidey();
-	}
-};
-
-//  And bind loading
-$(Anchor.init);
+	});
+});

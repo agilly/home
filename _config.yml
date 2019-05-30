@@ -1,20 +1,20 @@
-title:            Balzac
-tagline:          A beautiful theme.
-description:      Describe your website.
-canonical: http://jekyll.gtat.me
+title:            Arthur Gilly
+tagline:          Welcome to me!
+description:      What I do, what I like.
+canonical: http://arthurgilly.com
 
 # Owner/author information
 owner:
-  name:           Cole Townsend
+  name:           Arthur Gilly
   avatar:         avatar.png
-  bio:            "Aesthete & Athlete"
-  email:          cole@coletownsend.com
-  twitter:        twnsndco
-  github:         coletownsend
-  instagram:      ctrunsthis
-  dribbble:       coletownsend
-  disqus:         balzac
-  location:       "Buffalo, NY"
+  bio:            ""
+  email:          arthur.leonard.gilly@gmail.com
+  twitter:        ArthurGilly
+  github:         agilly
+  #instagram:      ctrunsthis
+  #dribbble:       coletownsend
+  #disqus:         balzac 
+  location:       "Cambridge, UK"
   # Plug in your disqus shortname!
 
 tools:
@@ -28,34 +28,56 @@ opengraph:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: About
+  - title: CV
     url: /about
+  - title: Work
+    url: /work
+  - title: Play
+    url: /play
   - title: Github
-    url: https://github.com/ColeTownsend/Balzac-for-Jekyll
+    url: https://github.com/agilly
     external: true
-  - title: Cole Who?
-    url: http://coletownsend.com
+  - title: ResearchGate
+    url: https://www.researchgate.net/profile/Arthur_Gilly
+    external: true
+  - title: ORCID
+    url: http://orcid.org/0000-0002-3190-4358
+    external: true
+  - title: Books & Movies
+    url: https://www.senscritique.com/de_a
+    external: true
+  - title: Medium
+    url: https://medium.com/in-good-measure
     external: true
 
+
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/London
 future:      true
-highlighter: pygments
+#highlighter: pygments
+mathjax:  true
 markdown:    kramdown
 
 kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+  input: GFM
+  syntax_highlighter: rouge
+#  auto_ids: true
+#  footnote_nr: 1
+#  entity_output: as_char
+#  toc_levels: 1..6
+#  syntax_highlighter: rouge
+#  syntax_highlighter_opts: 
+#    block:
+ #     line_numbers: true
+#  input: GFM
+  
+ # block:
+  #  line_numbers: 1
+  #   line_numbers:
+  #   coderay_line_numbers_start: 1
+  #   coderay_tab_width: 4
+  #   coderay_bold_every: 10
+  #   coderay_css: class
 
 sass:
     style: :compressed
